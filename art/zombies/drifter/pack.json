@@ -1,0 +1,15 @@
+{
+  "sprite_frames": "DrifterFrames.tres",
+  "cols": 8,
+  "cell": 200,
+  "frame": 192,
+  "feet_y": 184,
+  "target_height": 120,
+  "fps": {"idle": 6, "walk": 8, "attack": 10, "hit": 12, "death": 10},
+  "looping": ["idle", "walk"],
+  "wide": {"death": 288},
+  "body_sheets": [
+    {"facing": "se", "file": "drifter_se.png", "layout": "rows", "expect": [0, 0, 0, 0, 4, 6], "rows": ["idle", "walk", "attack", "hit", "death", "death"]},
+    {"facing": "ne", "file": "drifter_ne.png", "layout": "rows", "expect": [0, 0, 0, 0, 4, 5], "cuts": [[[78, 1146], [144, 1146], [144, 1136]]], "rows": ["idle", "walk", "attack", "hit", "death", "death"]}
+  ]
+}

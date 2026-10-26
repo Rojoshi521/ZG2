@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" load_steps=33 format=3]
+
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_se_00.png" id="img_scream_se_0"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_se_01.png" id="img_scream_se_1"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_se_02.png" id="img_scream_se_2"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_se_03.png" id="img_scream_se_3"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_se_04.png" id="img_scream_se_4"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_se_05.png" id="img_scream_se_5"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_se_06.png" id="img_scream_se_6"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_se_07.png" id="img_scream_se_7"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_sw_00.png" id="img_scream_sw_0"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_sw_01.png" id="img_scream_sw_1"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_sw_02.png" id="img_scream_sw_2"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_sw_03.png" id="img_scream_sw_3"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_sw_04.png" id="img_scream_sw_4"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_sw_05.png" id="img_scream_sw_5"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_sw_06.png" id="img_scream_sw_6"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_sw_07.png" id="img_scream_sw_7"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_ne_00.png" id="img_scream_ne_0"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_ne_01.png" id="img_scream_ne_1"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_ne_02.png" id="img_scream_ne_2"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_ne_03.png" id="img_scream_ne_3"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_ne_04.png" id="img_scream_ne_4"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_ne_05.png" id="img_scream_ne_5"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_ne_06.png" id="img_scream_ne_6"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_ne_07.png" id="img_scream_ne_7"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_nw_00.png" id="img_scream_nw_0"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_nw_01.png" id="img_scream_nw_1"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_nw_02.png" id="img_scream_nw_2"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_nw_03.png" id="img_scream_nw_3"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_nw_04.png" id="img_scream_nw_4"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_nw_05.png" id="img_scream_nw_5"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_nw_06.png" id="img_scream_nw_6"]
+[ext_resource type="Texture2D" path="res://art/elites/howler/vfx/scream_nw_07.png" id="img_scream_nw_7"]
+
+[resource]
+animations = [
+{"frames": [{"duration": 1.0, "texture": ExtResource("img_scream_se_0")}, {"duration": 1.0, "texture": ExtResource("img_scream_se_1")}, {"duration": 1.0, "texture": ExtResource("img_scream_se_2")}, {"duration": 1.0, "texture": ExtResource("img_scream_se_3")}, {"duration": 1.0, "texture": ExtResource("img_scream_se_4")}, {"duration": 1.0, "texture": ExtResource("img_scream_se_5")}, {"duration": 1.0, "texture": ExtResource("img_scream_se_6")}, {"duration": 1.0, "texture": ExtResource("img_scream_se_7")}], "loop": false, "name": &"scream_se", "speed": 9.0},
+{"frames": [{"duration": 1.0, "texture": ExtResource("img_scream_sw_0")}, {"duration": 1.0, "texture": ExtResource("img_scream_sw_1")}, {"duration": 1.0, "texture": ExtResource("img_scream_sw_2")}, {"duration": 1.0, "texture": ExtResource("img_scream_sw_3")}, {"duration": 1.0, "texture": ExtResource("img_scream_sw_4")}, {"duration": 1.0, "texture": ExtResource("img_scream_sw_5")}, {"duration": 1.0, "texture": ExtResource("img_scream_sw_6")}, {"duration": 1.0, "texture": ExtResource("img_scream_sw_7")}], "loop": false, "name": &"scream_sw", "speed": 9.0},
+{"frames": [{"duration": 1.0, "texture": ExtResource("img_scream_ne_0")}, {"duration": 1.0, "texture": ExtResource("img_scream_ne_1")}, {"duration": 1.0, "texture": ExtResource("img_scream_ne_2")}, {"duration": 1.0, "texture": ExtResource("img_scream_ne_3")}, {"duration": 1.0, "texture": ExtResource("img_scream_ne_4")}, {"duration": 1.0, "texture": ExtResource("img_scream_ne_5")}, {"duration": 1.0, "texture": ExtResource("img_scream_ne_6")}, {"duration": 1.0, "texture": ExtResource("img_scream_ne_7")}], "loop": false, "name": &"scream_ne", "speed": 9.0},
+{"frames": [{"duration": 1.0, "texture": ExtResource("img_scream_nw_0")}, {"duration": 1.0, "texture": ExtResource("img_scream_nw_1")}, {"duration": 1.0, "texture": ExtResource("img_scream_nw_2")}, {"duration": 1.0, "texture": ExtResource("img_scream_nw_3")}, {"duration": 1.0, "texture": ExtResource("img_scream_nw_4")}, {"duration": 1.0, "texture": ExtResource("img_scream_nw_5")}, {"duration": 1.0, "texture": ExtResource("img_scream_nw_6")}, {"duration": 1.0, "texture": ExtResource("img_scream_nw_7")}], "loop": false, "name": &"scream_nw", "speed": 9.0}
+]

@@ -1,0 +1,15 @@
+{
+  "sprite_frames": "ShamblerFrames.tres",
+  "cols": 6,
+  "cell": 200,
+  "frame": 192,
+  "feet_y": 184,
+  "target_height": 120,
+  "fps": {"idle": 6, "detection": 8, "walk": 8, "attack": 10, "hit": 12, "death": 8},
+  "looping": ["idle", "walk"],
+  "wide": {"death": 288},
+  "body_sheets": [
+    {"facing": "se", "file": "shambler_se.png", "layout": "rows", "expect": {"death": 7}, "rows": ["idle", "detection", "walk", "attack", "hit", "death"]},
+    {"facing": "ne", "file": "shambler_ne.png", "layout": "rows", "expect": {"death": 7}, "rows": ["idle", "detection", "walk", "attack", "hit", "death"]}
+  ]
+}

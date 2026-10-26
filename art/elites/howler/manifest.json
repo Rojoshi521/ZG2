@@ -1,0 +1,78 @@
+{
+  "name": "Howler \u2014 isometric diagonal animation pack V2",
+  "frame_size": [
+    192,
+    192
+  ],
+  "directions": [
+    "se",
+    "sw",
+    "ne",
+    "nw"
+  ],
+  "animation_order": [
+    "idle",
+    "walk",
+    "detection",
+    "scream",
+    "attack",
+    "hit",
+    "recovery",
+    "death"
+  ],
+  "animations": {
+    "idle": {
+      "frames_per_direction": 5,
+      "fps": 5,
+      "loop": true
+    },
+    "walk": {
+      "frames_per_direction": 8,
+      "fps": 8,
+      "loop": true
+    },
+    "detection": {
+      "frames_per_direction": 5,
+      "fps": 8,
+      "loop": false
+    },
+    "scream": {
+      "frames_per_direction": 6,
+      "fps": 9,
+      "loop": false
+    },
+    "attack": {
+      "frames_per_direction": 6,
+      "fps": 10,
+      "loop": false
+    },
+    "hit": {
+      "frames_per_direction": 4,
+      "fps": 10,
+      "loop": false
+    },
+    "recovery": {
+      "frames_per_direction": 5,
+      "fps": 8,
+      "loop": false
+    },
+    "death": {
+      "frames_per_direction": 9,
+      "fps": 8,
+      "loop": false
+    }
+  },
+  "separate_scream_vfx": {
+    "frames_per_direction": 8,
+    "file": "sheets/scream_vfx_separate.png"
+  },
+  "special_animation": "omitted (not visually distinct)",
+  "exported_body_frames": 192,
+  "byte_identical_body_frame_groups": {},
+  "notes": [
+    "These are image-generated painted key poses, segmented from a raster concept sheet: art consistency and timing need hand polish before shipping.",
+    "Background transparency and fixed 192px frame layout were built programmatically.",
+    "Every exported body frame is sampled from a distinct source slot, not a duplicated or mirrored copy.",
+    "Artwork is gritty/pixel-like with nearest-neighbor scale-up; visual continuity is not guaranteed."
+  ]
+}

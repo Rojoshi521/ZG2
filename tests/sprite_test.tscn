@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dmtbuin02rh0t"]
+
+[ext_resource type="Script" uid="uid://dietacgaa5mg6" path="res://tests/sprite_test.gd" id="1"]
+
+[node name="SpriteTest" type="Node2D" unique_id=1922062044]
+script = ExtResource("1")
+
+[node name="World" type="Node2D" parent="." unique_id=1210593558]
+y_sort_enabled = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1680888333]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=325073416]
+
+[node name="Label" type="Label" parent="HUD" unique_id=261150014]
+offset_left = 16.0
+offset_top = 12.0

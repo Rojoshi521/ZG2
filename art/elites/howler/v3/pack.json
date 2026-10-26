@@ -1,0 +1,25 @@
+{
+  "sprite_frames": "HowlerV3Frames.tres",
+  "cols": 6,
+  "cell": 256,
+  "frame": 192,
+  "feet_y": 184,
+  "target_height": 126,
+  "fps": {"idle": 6, "walk": 8, "attack": 10, "scream": 8, "detection": 8, "recovery": 8, "hit": 12, "death": 8},
+  "looping": ["idle", "walk"],
+  "wide": {"death": 256},
+  "emitter_probe": "scream",
+  "body_sheets": [
+    {"facing": "se", "file": "howler_se.png", "rows": ["idle", "walk", "attack", "scream"]},
+    {"facing": "ne", "file": "howler_ne.png", "rows": ["idle", "walk", "attack", "scream"]},
+    {"facing": "se", "file": "howler_se_2.png", "rows": ["detection", "recovery", "hit", "death"]},
+    {"facing": "ne", "file": "howler_ne_2.png", "rows": ["detection", "recovery", "hit", "death"]}
+  ],
+  "vfx": {
+    "sprite_frames": "HowlerV3Vfx.tres",
+    "scale": 0.4,
+    "frames": 6,
+    "fps": 10,
+    "sheets": {"scream_shards": "scream_shards.png", "scream_glow": "scream_glow.png"}
+  }
+}

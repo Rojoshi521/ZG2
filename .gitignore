@@ -1,0 +1,7 @@
+# Godot 4 cache and imports
+.godot/
+/android/
+*.translation
+
+# Local test captures
+/captures/

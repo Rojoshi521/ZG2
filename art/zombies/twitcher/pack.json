@@ -1,0 +1,15 @@
+{
+  "sprite_frames": "TwitcherFrames.tres",
+  "cols": 9,
+  "cell": 120,
+  "frame": 192,
+  "feet_y": 184,
+  "target_height": 120,
+  "fps": {"idle": 6, "walk": 8, "skitter": 12, "detection": 8, "crouch": 8, "attack": 10, "hit": 12, "recovery": 8, "death": 8},
+  "looping": ["idle", "walk", "skitter"],
+  "wide": {"death": 256},
+  "body_sheets": [
+    {"facing": "se", "file": "twitcher2_se.png", "layout": "rows", "expect": {"death": 7}, "rows": ["idle", "detection", "crouch", "walk", "attack", "skitter", "hit", "recovery", "death"]},
+    {"facing": "ne", "file": "twitcher2_ne.png", "layout": "rows", "expect": {"death": 7}, "rows": ["idle", "detection", "crouch", "walk", "attack", "skitter", "hit", "recovery", "death"]}
+  ]
+}
