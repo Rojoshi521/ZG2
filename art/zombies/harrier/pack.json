@@ -1,0 +1,23 @@
+{
+  "sprite_frames": "HarrierFrames.tres",
+  "cols": 8,
+  "cell": 200,
+  "frame": 192,
+  "feet_y": 184,
+  "target_height": 120,
+  "fps": {"idle": 6, "detection": 8, "leap_prep": 8, "leap": 12, "recovery": 8, "walk": 12, "hit": 12, "death": 8},
+  "looping": ["idle", "walk"],
+  "wide": {"leap": 384, "recovery": 256, "death": 384},
+  "body_sheets": [
+    {"facing": "se", "file": "harrier_se.png", "layout": "rows", "seams": [[135, 160], [390, 418], [538, 566], [670, 698], [811, 839], [958, 986]],
+     "erase": [[0,57,75,46],[0,191,146,45],[0,317,150,45],[0,451,151,45],[0,582,203,45],[0,728,109,46],[0,862,68,45],[0,993,97,45]],
+     
+     "expect": {"idle": 6, "detection": 4, "leap_prep": 4, "leap": 6, "recovery": 5, "walk": 8, "hit": 3, "death": 6},
+     "rows": ["idle", "detection", "leap_prep", "leap", "recovery", "walk", "hit", "death"]},
+    {"facing": "ne", "file": "harrier_ne.png", "layout": "rows", "seams": [[136, 164], [393, 421], [545, 573], [672, 700], [814, 842], [955, 983]],
+     "erase": [[0,59,80,47],[0,191,147,48],[0,318,155,48],[0,453,153,48],[0,584,209,48],[0,729,112,49],[0,862,72,49],[0,996,99,48]],
+     
+     "expect": {"idle": 6, "detection": 4, "leap_prep": 4, "leap": 6, "recovery": 5, "walk": 8, "hit": 3, "death": 6},
+     "rows": ["idle", "detection", "leap_prep", "leap", "recovery", "walk", "hit", "death"]}
+  ]
+}

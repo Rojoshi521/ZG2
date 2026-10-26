@@ -10,7 +10,7 @@ const WALK_SPEED := 70.0
 const CYCLE_SECONDS := 2.2
 
 ## Any character scene with set_facing / set_facing_from_screen_vector / set_state.
-@export var character: PackedScene = preload("res://art/zombies/twitcher/Twitcher.tscn")
+@export var character: PackedScene = preload("res://art/zombies/harrier/Harrier.tscn")
 
 @onready var world: Node2D = $World
 @onready var camera: Camera2D = $Camera2D

@@ -129,6 +129,8 @@ Copy `art/elites/howler/v3/pack.json` and edit it.
 | `body_sheets[].rows` (repeats) | The same name on several rows makes one animation continue across them, e.g. `[..., "death", "death"]` for a death drawn over two rows (Drifter) |
 | `body_sheets[].expect` | Optional, `rows` layout only. If two frames touch and come out as one, the tool cuts the widest figure at its emptiest column until the row has the right count. Either `{"death": 7}` (by name) or a list with one count per row, `[0, 0, 0, 0, 4, 6]` (0 = leave as found). Use the list when a name repeats |
 | `body_sheets[].cuts` | Optional: polylines `[[[x, y], [x, y], ...]]` in sheet pixels, for figures drawn **overlapping** (e.g. one zombie's boot over another's back). A 2 px line is dropped along each one so they separate. Find the spot by viewing the sheet zoomed in |
+| `body_sheets[].seams` | Optional: `[[y0, y1], ...]` bands where two **rows** touch. In each band the tool finds the least opaque path across the sheet (it goes around figures where it can) and cuts along it. Find bands by looking for the rows' narrowest point; one or two figures touching is enough to swap pieces between rows |
+| `body_sheets[].erase` | Optional: `[[x, y, w, h], ...]` rects cleared before anything else, for row labels drawn on the sheet (otherwise a label near a frame gets attached to it) |
 | `vfx` | Optional: `sprite_frames`, `scale`, `frames`, `fps`, and `sheets` mapping animation name → file |
 
 ---
@@ -205,9 +207,11 @@ Copy `HowlerV3.tscn` and `HowlerV3.gd`, rename them, and fix the paths inside th
 | Corpse falls so far forward it's clipped | Shambler SE death | Raise `wide` (`{"death": 288}`) |
 | One animation drawn over two rows | Drifter death | List the name twice in `rows` |
 | Rows overlapping vertically, figures overlapping each other | Drifter NE death | Rows are grouped by feet line (handled); overlapping figures need a `cuts` line |
+| Rows touching each other (a boot touches the head below), so pieces land in the wrong row and `expect` splits junk | Rusher NE | Build once without `expect` to see the real counts, then add `seams` bands between the touching rows |
 | A zip of pre-cut frames instead of sheets | Twitcher | `tools/frames_to_sheet.gd` packs them into a `rows` sheet (and strips chart border lines), then build as usual |
 | Frames cut from labelled charts with painted backgrounds, mixing two charts | Twitcher V1 zip | Unusable: two different bodies, low resolution, pale fringe. Use a single chart instead |
 | A labelled chart (panels, SE top / NE bottom) with a faint glow "haze" behind the figures | Twitcher | `tools/chart_to_sheets.gd` clears the haze, drops labels/borders and stacks panels as rows (column-major order). Without it, a brown box shows around the zombie in game |
+| A labelled chart whose panels have a dark checker background baked in (opaque, not transparent) | Grabber | `tools/keyed_chart_to_sheets.gd` finds each frame cell from the grey divider lines, keys the background out (lighter/warmer than the cell edge, plus the chart's own soft alpha silhouette for dark legs) and writes panels as rows in reading order (left to right, then down). Check the printed row order against `rows` |
 | A state missing from the sheet | Drifter (no detection) | Fine: `ZombieSprite` ignores it and the test scene leaves it out of the 1–N keys |
 
 ---
@@ -215,5 +219,5 @@ Copy `HowlerV3.tscn` and `HowlerV3.gd`, rename them, and fix the paths inside th
 ## 10. Regular zombies
 
 Regular zombies (`art/zombies/<name>/`) are the same process without effects, so they share one script: `res://art/zombies/ZombieSprite.gd`.
-Its `STATES` are idle, walk, skitter, detection, crouch, twitch, attack, hit, recovery and death; each zombie only needs the ones it has (missing ones are ignored). Add a name there if a new zombie brings a new animation. Copy `art/zombies/shambler/` (`pack.json` and `Shambler.tscn`), rename it and point the scene at your `<Name>Frames.tres`.
+Its `STATES` are idle, walk, shuffle, skitter, detection, crouch, twitch, attack, reach, grab, lunge, hit, recovery and death; each zombie only needs the ones it has (missing ones are ignored). Add a name there if a new zombie brings a new animation. Copy `art/zombies/shambler/` (`pack.json` and `Shambler.tscn`), rename it and point the scene at your `<Name>Frames.tres`.
 One sheet per facing with all six rows is enough. The test scene reads `STATES` from the character's script, so the number keys match whatever states the character has.

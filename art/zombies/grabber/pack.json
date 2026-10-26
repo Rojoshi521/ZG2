@@ -1,0 +1,15 @@
+{
+  "sprite_frames": "GrabberFrames.tres",
+  "cols": 9,
+  "cell": 120,
+  "frame": 192,
+  "feet_y": 184,
+  "target_height": 120,
+  "fps": {"idle": 6, "walk": 8, "shuffle": 8, "detection": 8, "reach": 10, "grab": 10, "hit": 12, "recovery": 8, "death": 8},
+  "looping": ["idle", "walk", "shuffle"],
+  "wide": {"death": 256},
+  "body_sheets": [
+    {"facing": "se", "file": "grabber_se.png", "layout": "rows", "expect": {"death": 9}, "rows": ["idle", "walk", "hit", "detection", "reach", "recovery", "grab", "shuffle", "death"]},
+    {"facing": "ne", "file": "grabber_ne.png", "layout": "rows", "expect": {"death": 9}, "rows": ["idle", "walk", "hit", "detection", "reach", "recovery", "grab", "shuffle", "death"]}
+  ]
+}

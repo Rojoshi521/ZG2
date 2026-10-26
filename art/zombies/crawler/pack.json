@@ -1,0 +1,14 @@
+{
+  "sprite_frames": "CrawlerFrames.tres",
+  "cols": 6,
+  "cell": 200,
+  "frame": 192,
+  "feet_y": 184,
+  "target_height": 72,
+  "fps": {"idle": 6, "detection": 8, "walk": 9, "attack": 10, "lunge": 10},
+  "looping": ["idle", "walk"],
+  "body_sheets": [
+    {"facing": "se", "file": "crawler_se.png", "layout": "rows", "expect": {"idle": 6, "detection": 6, "walk": 6, "attack": 6, "lunge": 6}, "rows": ["idle", "detection", "walk", "attack", "lunge"]},
+    {"facing": "ne", "file": "crawler_ne.png", "layout": "rows", "expect": {"idle": 6, "detection": 6, "walk": 6, "attack": 6, "lunge": 6}, "rows": ["idle", "detection", "walk", "attack", "lunge"]}
+  ]
+}

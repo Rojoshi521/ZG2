@@ -1,0 +1,15 @@
+{
+  "sprite_frames": "RusherFrames.tres",
+  "cols": 8,
+  "cell": 200,
+  "frame": 192,
+  "feet_y": 184,
+  "target_height": 120,
+  "fps": {"idle": 6, "detection": 8, "walk": 12, "attack": 12, "hit": 12, "recovery": 8, "death": 8},
+  "looping": ["idle", "walk"],
+  "wide": {"attack": 256, "death": 288},
+  "body_sheets": [
+    {"facing": "se", "file": "rusher_se.png", "layout": "rows", "expect": {"idle": 6, "detection": 3, "attack": 6, "hit": 3, "walk": 8, "recovery": 4, "death": 6}, "rows": ["idle", "detection", "attack", "hit", "walk", "recovery", "death"]},
+    {"facing": "ne", "file": "rusher_ne.png", "layout": "rows", "seams": [[630, 655], [832, 842], [1042, 1062], [1150, 1185]], "expect": {"idle": 6, "detection": 3, "attack": 6, "hit": 3, "walk": 8, "recovery": 4, "death": 6}, "rows": ["idle", "detection", "attack", "hit", "walk", "recovery", "death"]}
+  ]
+}

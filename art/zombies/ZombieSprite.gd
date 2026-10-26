@@ -5,7 +5,7 @@ extends Node2D
 
 signal action_finished(state: String)
 
-const STATES := ["idle", "walk", "skitter", "detection", "crouch", "twitch", "attack", "hit", "recovery", "death"]
+const STATES := ["idle", "walk", "shuffle", "skitter", "detection", "crouch", "twitch", "attack", "reach", "grab", "lunge", "leap_prep", "leap", "hit", "recovery", "death"]
 ## Each zombie has only some of these (the Drifter has no detection, only the
 ## Twitcher has skitter, crouch and twitch); the missing ones are ignored.
 ## facing -> [drawn facing, mirrored]

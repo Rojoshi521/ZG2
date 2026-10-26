@@ -295,7 +295,13 @@ func _build_body(sheet_cfg: Dictionary, sheet: Image) -> Array:
 	var frame := int(cfg["frame"])
 	var feet_y := int(cfg["feet_y"])
 	var wide: Dictionary = cfg.get("wide", {})
-	var result := _regions(sheet, sheet_cfg.get("cuts", []))
+	# `erase`: [x, y, w, h] rects cleared first (row labels drawn on the sheet).
+	for r in sheet_cfg.get("erase", []):
+		sheet.fill_rect(Rect2i(int(r[0]), int(r[1]), int(r[2]), int(r[3])), Color(0, 0, 0, 0))
+	var cuts: Array = sheet_cfg.get("cuts", []).duplicate()
+	for band in sheet_cfg.get("seams", []):
+		cuts.append(_seam(sheet, int(band[0]), int(band[1])))
+	var result := _regions(sheet, cuts)
 	var labels: PackedInt32Array = result[0]
 	var info: Array = result[1]
 	var cells := {}
@@ -489,3 +495,38 @@ func _build_vfx(vfx_name: String, sheet: Image) -> int:
 	# Set the AnimatedSprite2D to centered = false, offset = -origin.
 	report["vfx_" + vfx_name] = {"frames": frames.size(), "frame_size": str(size), "origin": str(origin)}
 	return frames.size()
+
+
+## `seams` bands ([y0, y1]): where two rows touch, the least opaque path from the
+## left edge to the right within the band (moving at most 2 px up or down per
+## column), returned as a cut polyline. It goes around figures where it can.
+func _seam(img: Image, y0: int, y1: int) -> Array:
+	var w := img.get_width()
+	var h := y1 - y0 + 1
+	var cost := PackedFloat32Array()
+	cost.resize(w * h)
+	var from := PackedInt32Array()
+	from.resize(w * h)
+	for y in h:
+		cost[y] = img.get_pixel(0, y0 + y).a
+	for x in range(1, w):
+		for y in h:
+			var best := INF
+			var best_y := y
+			for dy in range(-2, 3):
+				var py := y + dy
+				if py >= 0 and py < h and cost[(x - 1) * h + py] < best:
+					best = cost[(x - 1) * h + py]
+					best_y = py
+			cost[x * h + y] = best + img.get_pixel(x, y0 + y).a
+			from[x * h + y] = best_y
+	var y_end := 0
+	for y in h:
+		if cost[(w - 1) * h + y] < cost[(w - 1) * h + y_end]:
+			y_end = y
+	var path := []
+	var y := y_end
+	for x in range(w - 1, -1, -1):
+		path.push_front([x, y0 + y])
+		y = from[x * h + y]
+	return path
